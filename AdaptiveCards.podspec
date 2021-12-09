@@ -31,16 +31,17 @@ Pod::Spec.new do |spec|
     sspec.source_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/*.h'
     sspec.header_mappings_dir = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/'
     sspec.private_header_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/*.h'
-       sspec.platform         = :ios, '14'
+    sspec.platform         = :ios, '14'
   end
 
   spec.subspec 'AdaptiveCardsPrivate' do | sspec |
     sspec.source_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PrivateHeaders/*.h'
     sspec.header_mappings_dir = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PrivateHeaders/'
     sspec.private_header_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PrivateHeaders/*.h'
+    sspec.dependency 'AdaptiveCards/AdaptiveCardsPublic'
   end
 
-
+      spec.platform         = :ios, '14'
   spec.frameworks = 'AVFoundation', 'AVKit', 'CoreGraphics', 'QuartzCore', 'UIKit'
   
   spec.resource_bundles = {'AdaptiveCards' => ['source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/Resources/**/*']}
