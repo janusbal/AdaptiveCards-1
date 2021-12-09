@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'AdaptiveCardsPublic' do | sspec |
     sspec.source_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/*.h'
     sspec.header_mappings_dir = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/'
-#    sspec.private_header_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/*.h'
+    sspec.private_header_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/*.h'
   end
 
   spec.subspec 'AdaptiveCardsPrivate' do | sspec |
