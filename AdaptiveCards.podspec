@@ -16,6 +16,8 @@ Pod::Spec.new do |spec|
 
   #spec.source_files           = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/*.{h,m,mm}'
   #spec.public_header_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/*.h'
+  
+  spec.default_subspecs = 'AdaptiveCardsPublic', 'AdaptiveCardsPrivate', 'ObjectModel'
 
   spec.subspec 'ObjectModel' do | sspec |
     sspec.source_files = 'source/shared/cpp/ObjectModel/**/*.{h,cpp}'
