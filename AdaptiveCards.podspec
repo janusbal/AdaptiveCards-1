@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AdaptiveCardsPublic' do | sspec |
-    sspec.source_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/*.h'
+    sspec.source_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/PublicHeaders/*.{h,m,mm}'
     sspec.platform         = :ios, '14'
   end
 
