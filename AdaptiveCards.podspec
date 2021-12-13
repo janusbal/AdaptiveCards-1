@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   
   spec.summary          = 'Adaptive Cards are a new way for developers to exchange card content in a common and consistent way'
   
-  spec.source       = { :git => 'https://github.com/microsoft/AdaptiveCards.git', :tag => 'ios-v2.8.3' }
+  spec.source       = { :git => 'https://github.com/microsoft/AdaptiveCards.git', :branch => 'fluent_provider_privates_unmove_files' }
 
   spec.default_subspecs = 'AdaptiveCardsPublic', 'AdaptiveCardsPrivate', 'ObjectModel', 'UIProviders'
 
