@@ -12,12 +12,15 @@ Pod::Spec.new do |spec|
   
   spec.summary          = 'Adaptive Cards are a new way for developers to exchange card content in a common and consistent way'
   
-  spec.source       = { :git => 'https://github.com/microsoft/AdaptiveCards.git', :branch => 'fluent_provider_privates_unmove_files' }
+  spec.source       = { :git => 'https://github.com/janusbal/AdaptiveCards-1.git', :branch => 'fluent_provider_privates_unmove_files' }
 
   spec.default_subspecs = 'AdaptiveCardsPublic', 'AdaptiveCardsPrivate', 'ObjectModel', 'UIProviders'
 
   spec.subspec 'AdaptiveCardsPublic' do | sspec |
     sspec.source_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/*.{h,m,mm}'
+    sspec.resource_bundles = {'AdaptiveCards' => ['source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/Resources/**/*']}
+    sspec.dependency 'AdaptiveCards/AdaptiveCardsPrivate'
+    sspec.dependency 'AdaptiveCards/ObjectModel'
   end
 
   spec.subspec 'ObjectModel' do | sspec |
@@ -41,13 +44,14 @@ Pod::Spec.new do |spec|
     sspec.source_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/UIProviders/*.{h,m,mm}'
     sspec.header_mappings_dir = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/UIProviders/'
     sspec.project_header_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/UIProviders/*.h'
+    sspec.dependency 'AdaptiveCards/AdaptiveCardsPrivate'
     sspec.dependency 'MicrosoftFluentUI/Tooltip_ios', '~> 0.3.6'
   end
 
   spec.platform         = :ios, '14'
   spec.frameworks = 'AVFoundation', 'AVKit', 'CoreGraphics', 'QuartzCore', 'UIKit'
   
-  spec.resource_bundles = {'AdaptiveCards' => ['source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/Resources/**/*']}
+  
 
   spec.exclude_files = 'source/ios/AdaptiveCards/AdaptiveCards/AdaptiveCards/include/**/*'
 
